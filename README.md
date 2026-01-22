@@ -40,27 +40,3 @@ A modular, robust Unix-like shell implemented in C. This project was developed t
     ./minishell
 
 ---
-
-## 3. Initial Push from your Terminal
-
-Once the GitHub repo is ready, run these commands in your `MINISHELL` folder:
-
-1.  **Initialize local git:**
-    ```bash
-    git init
-    ```
-2.  **Add your remote:**
-    ```bash
-    git remote add origin <PASTE_YOUR_REPO_URL_HERE>
-    ```
-3.  **Commit and Push:**
-    ```bash
-    git add .
-    git commit -m "Initial commit: Completed modular shell with N-pipes and signal handling"
-    git branch -M main
-    git push -u origin main
-    ```
-
-
-
-**Would you like me to help you refine your `cd` and "Empty Input" logic now so your first commit is as clean as possible?**
