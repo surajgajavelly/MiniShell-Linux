@@ -1,0 +1,88 @@
+Minishell$:pwd
+/home/spiegel/Linux_internals/PROJECTS/MINISHELL
+Minishell$:pwd     
+/home/spiegel/Linux_internals/PROJECTS/MINISHELL
+Minishell$:cd ..
+Minishell$:pwd 
+/home/spiegel/Linux_internals/PROJECTS
+Minishell$:echo hello world
+echo $$
+echo $?
+echo $SHELL
+hello world
+Minishell$:68897
+Minishell$:0
+Minishell$:/bin/bash
+Minishell$:exit
+
+Minishell$:PS1=MyShell$:
+MyShell$:PS1
+PS1 =NewPrompt
+PS1= NewPrompt
+Invalid PS1 assignment
+MyShell$:MyShell$:Error: PS1 value cannot contain spaces.
+MyShell$:
+MyShell$:
+MyShell$:
+MyShell$:ls -l
+cat main.c
+total 100
+-rwxr-xr-x 1 spiegel spiegel 16304 Jan  7 12:22 a.out
+-rw-r--r-- 1 spiegel spiegel   300 Jan  7 12:02 builtin.txt
+-rw-r--r-- 1 spiegel spiegel  1001 Jan 17 18:08 check_command.c
+-rw-r--r-- 1 spiegel spiegel   411 Jan  7 12:35 echo.c
+-rw-r--r-- 1 spiegel spiegel  1059 Jan 18 04:46 execute_external.c
+-rw-r--r-- 1 spiegel spiegel  5974 Jan 18 16:37 execute_internal.c
+-rw-r--r-- 1 spiegel spiegel  1150 Jan  7 12:05 external_commands.txt
+-rw-r--r-- 1 spiegel spiegel   880 Jan  7 12:36 extract_external.c
+-rw-r--r-- 1 spiegel spiegel   625 Jan 17 18:04 get_command.c
+-rw-r--r-- 1 spiegel spiegel  1209 Jan 18 05:06 linked_list.c
+-rw-r--r-- 1 spiegel spiegel   353 Jan 18 16:42 main.c
+-rw-r--r-- 1 spiegel spiegel  1163 Jan 18 16:41 main.h
+-rwxr-xr-x 1 spiegel spiegel 23936 Jan 18 16:42 minishell
+-rw-r--r-- 1 spiegel spiegel  2575 Jan 18 16:34 n_pipe.c
+-rw-r--r-- 1 spiegel spiegel  3166 Jan 18 16:40 scan_input.c
+-rw-r--r-- 1 spiegel spiegel  1601 Jan 18 16:27 signal_handler.c
+MyShell$:#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include "main.h"
+
+char prompt[SIZE] = "Minishell$:";
+int shell_pid;
+int child_pid = 0;
+int status = 0;
+struct process *process_head = NULL;
+
+int main()
+{
+        system("clear");
+
+        shell_pid = getpid();
+
+        char input_string[SIZE];
+        scan_input(prompt, input_string);
+
+        return 0;
+}
+MyShell$:ls | wc -l
+cat main.c | grep execute
+0
+MyShell$:execvp: No such file or directory
+MyShell$:sleep 30 &
+sleep: invalid time interval ‘&’
+Try 'sleep --help' for more information.
+MyShell$:sleep 30 &
+sleep: invalid time interval ‘&’
+Try 'sleep --help' for more information.
+MyShell$:jobs
+No jobs
+MyShell$:fg
+MyShell$:bg
+MyShell$:sleep 100
+^CMyShell$:sleep 100   
+^CMyShell$:sleep 100
+^ZMyShell$:jobs
+[1] PID: 69695  CMD: Stopped process
+MyShell$:exit
